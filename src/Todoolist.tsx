@@ -1,5 +1,5 @@
 
-type TaskType = {
+ export type TaskType = {
     id: number
     title: string
     isDone: boolean
@@ -9,6 +9,7 @@ type PropsType =  {
     title:string
     tasks:Array<TaskType>
     removeTask: Function
+    changeFilter: Function
       
 }
 export function Todoolist (props: PropsType) {
@@ -30,9 +31,9 @@ export function Todoolist (props: PropsType) {
             
           </ul>
           <div>
-            <button>All</button>
-            <button>Active</button>
-            <button>Completed</button>
+            <button onClick={() =>{ props.changeFilter('all')}}>All</button>
+            <button onClick={() =>{ props.changeFilter('active')}}>Active</button>
+            <button onClick={() =>{ props.changeFilter('Completed')}}>Completed</button>
           </div>
         
       </div>
