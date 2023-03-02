@@ -42,11 +42,18 @@ function changeFilter(value:FilterValuesType) {
   setFilter(value);
 
 }
+function addTask() {
+  let newTask =  {id: v1(), title: "new", isDone: false};
+  let newTasks = [newTask, ...tasks];
+  setTasks(newTasks)
+
+}
 
   return <div className="App">
     <Todoolist title="Wat to learn" tasks={tasksFoTodolist}
     removeTask={removeTask}
     changeFilter={changeFilter}
+     addTask={ addTask}
     />
     
     
